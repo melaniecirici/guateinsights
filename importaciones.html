@@ -1,25 +1,44 @@
 <!DOCTYPE html>
-<html lang="es">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Importaciones - GuateInsights</title>
-  <style>
-    body { font-family: Arial, sans-serif; margin: 0; padding: 0; background-color: #f7f9fc; }
-    header { background-color: #024873; color: white; padding: 20px; text-align: center; }
-    nav { background-color: #03619c; padding: 10px; text-align: center; }
-    nav a { color: white; text-decoration: none; margin: 0 10px; font-weight: bold; }
-    nav a:hover { text-decoration: underline; }
-    section { padding: 40px; }
-    h2 { color: #024873; }
-  </style>
-</head>
-<body>
-  <header><h1>GuateInsights</h1><p>Inteligencia de Datos Públicos de Guatemala</p></header>
-  <nav><a href="index.html">Inicio</a><a href="exportaciones.html">Exportaciones</a><a href="importaciones.html">Importaciones</a><a href="clima.html">Clima</a><a href="riesgo.html">Riesgos</a><a href="salud.html">Salud</a><a href="educacion.html">Educación</a><a href="empleo.html">Empleo</a><a href="tecnologia.html">Tecnología</a><a href="transporte.html">Transporte</a><a href="contacto.html">Contacto</a></nav>
-  <section>
-    <h2>Importaciones</h2>
-    <p>Próximamente visualizaciones y datos reales de esta categoría.</p>
-  </section>
-</body>
-</html>
+<html lang="es"><head><meta charset="UTF-8"><title>Importaciones - GuateInsights</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<style>
+body { font-family: Arial; background: #f7f9fc; margin: 0; }
+header { background: #024873; color: white; padding: 20px; text-align: center; }
+nav { background: #03619c; text-align: center; padding: 10px; overflow-x: auto; white-space: nowrap; }
+nav a { color: white; margin: 0 10px; text-decoration: none; font-weight: bold; display: inline-block; }
+section { padding: 40px; } table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+th, td { padding: 10px; border: 1px solid #ccc; } th { background: #024873; color: white; }
+canvas { margin-top: 30px; max-width: 100%; height: auto; }
+</style></head><body>
+<header><h1>GuateInsights - Importaciones</h1></header>
+<nav>
+  <a href="index.html">Inicio</a><a href="riesgo.html">Riesgos</a><a href="clima.html">Clima</a><a href="importaciones.html">Importaciones</a>
+</nav>
+<section><h2>Importaciones Principales por Categoría (2024)</h2>
+<table><tr><th>Producto</th><th>Valor en USD (millones)</th></tr>
+<tr><td>Vehículos</td><td>1,120</td></tr><tr><td>Petróleo</td><td>980</td></tr><tr><td>Medicinas</td><td>540</td></tr>
+<tr><td>Maquinaria</td><td>870</td></tr><tr><td>Cereales</td><td>450</td></tr></table>
+<canvas id="chartImportaciones"></canvas>
+<script>
+const ctxI = document.getElementById('chartImportaciones').getContext('2d');
+new Chart(ctxI, {
+  type: 'bar',
+  data: {
+    labels: ['Vehículos', 'Petróleo', 'Medicinas', 'Maquinaria', 'Cereales'],
+    datasets: [{
+      label: 'Valor en USD (millones)',
+      data: [1120, 980, 540, 870, 450],
+      backgroundColor: ['#0dcaf0', '#ffc107', '#198754', '#dc3545', '#6610f2']
+    }]
+  },
+  options: {
+    responsive: true,
+    plugins: {
+      title: {
+        display: true,
+        text: 'Importaciones por Producto - 2024'
+      }
+    }
+  }
+});
+</script></section></body></html>
