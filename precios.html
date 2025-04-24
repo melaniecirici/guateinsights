@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es"><head><meta charset="UTF-8"><title>Precios - GuateInsights</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<style>
+body { font-family: Arial; background: #f7f9fc; margin: 0; }
+header { background: #024873; color: white; padding: 20px; text-align: center; }
+nav { background: #03619c; text-align: center; padding: 10px; }
+nav a { color: white; margin: 0 10px; text-decoration: none; font-weight: bold; }
+section { padding: 40px; } table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+th, td { padding: 10px; border: 1px solid #ccc; } th { background: #024873; color: white; }
+canvas { margin-top: 30px; max-width: 100%; height: auto; }
+</style></head><body>
+<header><h1>GuateInsights - Precios Internos</h1></header>
+<nav><a href="index.html">Inicio</a><a href="precios.html">Precios</a><a href="produccion.html">Producción</a></nav>
+<section><h2>Precios Promedio de Productos Básicos (2024)</h2>
+<table>
+<tr><th>Producto</th><th>Precio promedio (Q)</th></tr>
+<tr><td>Maíz blanco (quintal)</td><td>Q140</td></tr>
+<tr><td>Frijol rojo (quintal)</td><td>Q550</td></tr>
+<tr><td>Tomate (caja 50 lb)</td><td>Q280</td></tr>
+<tr><td>Pollo entero (lb)</td><td>Q22</td></tr>
+<tr><td>Gas propano (25 lbs)</td><td>Q125</td></tr>
+</table>
+<canvas id="chartPrecios"></canvas>
+<script>
+const ctxPrecio = document.getElementById('chartPrecios').getContext('2d');
+new Chart(ctxPrecio, {
+  type: 'bar',
+  data: {
+    labels: ['Maíz blanco', 'Frijol rojo', 'Tomate', 'Pollo entero', 'Gas propano'],
+    datasets: [{
+      label: 'Precio promedio (Q)',
+      data: [140, 550, 280, 22, 125],
+      backgroundColor: ['#0dcaf0', '#198754', '#ffc107', '#dc3545', '#6610f2']
+    }]
+  },
+  options: {
+    responsive: true,
+    plugins: {
+      title: {
+        display: true,
+        text: 'Precios Promedio de Productos Básicos - 2024'
+      }
+    }
+  }
+});
+</script></section></body></html>
