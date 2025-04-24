@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html lang="es"><head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Exportaciones por Producto (2024)</title>
+<title>Exportaciones - GuateInsights</title>
 <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <style>body { font-family: 'Open Sans', sans-serif; margin: 0; background-color: #f4f8fb; color: #333; }
 header { background-color: #007acc; color: white; padding: 20px; text-align: center; font-size: 1.5em; }
 .sidebar {
@@ -19,8 +20,15 @@ main { margin-left: 240px; padding: 40px; }
   box-shadow: 0 2px 6px rgba(0,0,0,0.1);
 }
 h2 { color: #024873; }
-</style>
-</head><body>
+table {
+  width: 100%; border-collapse: collapse; margin-top: 20px;
+}
+th, td {
+  padding: 12px; border: 1px solid #ddd; text-align: left;
+}
+th { background-color: #007acc; color: white; }
+canvas { max-width: 100%; margin-top: 30px; }
+</style></head><body>
 <header>GuateInsights</header>
 <div class="sidebar">
   <a href="index.html">Inicio</a>
@@ -40,7 +48,37 @@ h2 { color: #024873; }
 <main>
   <div class="card">
     <h2>Exportaciones por Producto (2024)</h2>
-    <p>Próximamente visualizaciones y datos reales en esta categoría.</p>
+    <table>
+      <tr><th>Producto</th><th>Volumen (ton)</th><th>Valor USD</th><th>Destino</th></tr>
+      <tr><td>Café</td><td>162,000</td><td>$748,000,000</td><td>EE.UU.</td></tr>
+      <tr><td>Banano</td><td>194,000</td><td>$578,000,000</td><td>Unión Europea</td></tr>
+      <tr><td>Azúcar</td><td>240,000</td><td>$421,000,000</td><td>Corea del Sur</td></tr>
+      <tr><td>Cardamomo</td><td>68,000</td><td>$312,000,000</td><td>Medio Oriente</td></tr>
+      <tr><td>Vestimenta</td><td>220,000</td><td>$610,000,000</td><td>México</td></tr>
+    </table>
+    <canvas id="graficoExportaciones"></canvas>
   </div>
-</main>
-</body></html>
+<script>
+const ctx = document.getElementById('graficoExportaciones').getContext('2d');
+new Chart(ctx, {
+  type: 'bar',
+  data: {
+    labels: ['Café', 'Banano', 'Azúcar', 'Cardamomo', 'Vestimenta'],
+    datasets: [{
+      label: 'Valor en USD',
+      data: [748000000, 578000000, 421000000, 312000000, 610000000],
+      backgroundColor: ['#007acc', '#0dcaf0', '#ffc107', '#dc3545', '#20c997']
+    }]
+  },
+  options: {
+    responsive: true,
+    plugins: {
+      title: {
+        display: true,
+        text: 'Exportaciones por Producto - 2024'
+      }
+    }
+  }
+});
+</script>
+</main></body></html>

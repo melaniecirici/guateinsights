@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="es"><head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Bienvenido a GuateInsights</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GuateInsights - Inicio</title>
 <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
-<style>body { font-family: 'Open Sans', sans-serif; margin: 0; background-color: #f4f8fb; color: #333; }
-header { background-color: #007acc; color: white; padding: 20px; text-align: center; font-size: 1.5em; }
+<style>
+body { font-family: 'Open Sans', sans-serif; margin: 0; background-color: #f4f8fb; color: #333; }
+header { background-color: #007acc; color: white; padding: 20px; text-align: center; font-size: 1.8em; }
 .sidebar {
   height: 100vh; width: 220px; position: fixed; top: 0; left: 0; background-color: #024873; padding-top: 60px;
   display: flex; flex-direction: column; gap: 15px; font-weight: bold;
@@ -14,13 +16,18 @@ header { background-color: #007acc; color: white; padding: 20px; text-align: cen
 }
 .sidebar a:hover { background-color: #03619c; }
 main { margin-left: 240px; padding: 40px; }
-.card {
-  background: white; border-radius: 10px; padding: 20px; margin-bottom: 30px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+.grid {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px;
 }
-h2 { color: #024873; }
+.card {
+  background: white; border-radius: 10px; padding: 20px; text-align: center;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1); transition: transform 0.2s ease;
+}
+.card:hover { transform: translateY(-5px); }
+.card a { text-decoration: none; color: #024873; font-weight: bold; }
 </style>
-</head><body>
+</head>
+<body>
 <header>GuateInsights</header>
 <div class="sidebar">
   <a href="index.html">Inicio</a>
@@ -38,9 +45,21 @@ h2 { color: #024873; }
   <a href="contacto.html">Contacto</a>
 </div>
 <main>
-  <div class="card">
-    <h2>Bienvenido a GuateInsights</h2>
-    <p>Próximamente visualizaciones y datos reales en esta categoría.</p>
+  <h2>Explora Datos Inteligentes por Categoría</h2>
+  <div class="grid">
+    <div class="card"><a href="exportaciones.html">🌐 Exportaciones</a></div>
+    <div class="card"><a href="importaciones.html">📦 Importaciones</a></div>
+    <div class="card"><a href="clima.html">☀️ Clima</a></div>
+    <div class="card"><a href="riesgo.html">🌋 Riesgos</a></div>
+    <div class="card"><a href="salud.html">🏥 Salud</a></div>
+    <div class="card"><a href="educacion.html">📚 Educación</a></div>
+    <div class="card"><a href="empleo.html">👷 Empleo</a></div>
+    <div class="card"><a href="tecnologia.html">📱 Tecnología</a></div>
+    <div class="card"><a href="transporte.html">🚗 Transporte</a></div>
+    <div class="card"><a href="comercio.html">🛒 Comercio</a></div>
+    <div class="card"><a href="demografia.html">👥 Demografía</a></div>
+    <div class="card"><a href="contacto.html">✉️ Contacto</a></div>
   </div>
 </main>
-</body></html>
+</body>
+</html>
