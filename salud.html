@@ -2,24 +2,63 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Salud - GuateInsights</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <style>
-    body { font-family: Arial, sans-serif; margin: 0; padding: 0; background-color: #f7f9fc; }
-    header { background-color: #024873; color: white; padding: 20px; text-align: center; }
-    nav { background-color: #03619c; padding: 10px; text-align: center; }
-    nav a { color: white; text-decoration: none; margin: 0 10px; font-weight: bold; }
-    nav a:hover { text-decoration: underline; }
+    body { font-family: Arial, sans-serif; background: #f7f9fc; margin: 0; }
+    header { background: #024873; color: white; text-align: center; padding: 20px; }
+    nav { background: #03619c; padding: 10px; text-align: center; }
+    nav a { color: white; margin: 0 10px; text-decoration: none; font-weight: bold; }
     section { padding: 40px; }
-    h2 { color: #024873; }
+    table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+    th, td { padding: 10px; border: 1px solid #ccc; }
+    th { background-color: #024873; color: white; }
+    canvas { max-width: 100%; height: auto; margin-top: 30px; }
   </style>
 </head>
 <body>
-  <header><h1>GuateInsights</h1><p>Inteligencia de Datos Públicos de Guatemala</p></header>
-  <nav><a href="index.html">Inicio</a><a href="exportaciones.html">Exportaciones</a><a href="importaciones.html">Importaciones</a><a href="clima.html">Clima</a><a href="riesgo.html">Riesgos</a><a href="salud.html">Salud</a><a href="educacion.html">Educación</a><a href="empleo.html">Empleo</a><a href="tecnologia.html">Tecnología</a><a href="transporte.html">Transporte</a><a href="contacto.html">Contacto</a></nav>
+  <header><h1>GuateInsights - Salud Pública</h1></header>
+  <nav>
+    <a href="index.html">Inicio</a>
+    <a href="salud.html">Salud</a>
+    <a href="educacion.html">Educación</a>
+    <a href="empleo.html">Empleo</a>
+    <a href="tecnologia.html">Tecnología</a>
+  </nav>
   <section>
-    <h2>Salud</h2>
-    <p>Próximamente visualizaciones y datos reales de esta categoría.</p>
+    <h2>Indicadores de Salud (2024)</h2>
+    <table>
+      <tr><th>Indicador</th><th>Valor</th></tr>
+      <tr><td>Cobertura médica (%)</td><td>72</td></tr>
+      <tr><td>Mortalidad Infantil (por 1000 nacidos)</td><td>24.3</td></tr>
+      <tr><td>Hospitales Públicos</td><td>45</td></tr>
+      <tr><td>Centros de Salud</td><td>382</td></tr>
+      <tr><td>Clínicas Móviles</td><td>150</td></tr>
+    </table>
+    <canvas id="chartSalud"></canvas>
+    <script>
+      const ctxSalud = document.getElementById('chartSalud').getContext('2d');
+      new Chart(ctxSalud, {
+        type: 'bar',
+        data: {
+          labels: ['Cobertura médica', 'Mortalidad Infantil', 'Hospitales', 'Centros', 'Clínicas Móviles'],
+          datasets: [{
+            label: 'Indicadores de Salud',
+            data: [72, 24.3, 45, 382, 150],
+            backgroundColor: ['#1d90ff', '#f75e5e', '#28a745', '#ffc107', '#6f42c1']
+          }]
+        },
+        options: {
+          responsive: true,
+          plugins: {
+            title: {
+              display: true,
+              text: 'Salud Pública en Guatemala - 2024'
+            }
+          }
+        }
+      });
+    </script>
   </section>
 </body>
 </html>
