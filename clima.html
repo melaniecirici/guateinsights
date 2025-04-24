@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Clima - GuateInsights</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <style>
     body { font-family: Arial, sans-serif; margin: 0; padding: 0; background-color: #f7f9fc; }
     header { background-color: #024873; color: white; padding: 20px; text-align: center; }
@@ -12,14 +13,72 @@
     nav a:hover { text-decoration: underline; }
     section { padding: 40px; }
     h2 { color: #024873; }
+    table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+    th, td { padding: 10px; border: 1px solid #ccc; text-align: left; }
+    th { background-color: #024873; color: white; }
+    canvas { max-width: 100%; height: auto; margin-top: 30px; }
   </style>
 </head>
 <body>
-  <header><h1>GuateInsights</h1><p>Inteligencia de Datos Públicos de Guatemala</p></header>
-  <nav><a href="index.html">Inicio</a><a href="exportaciones.html">Exportaciones</a><a href="importaciones.html">Importaciones</a><a href="clima.html">Clima</a><a href="riesgo.html">Riesgos</a><a href="salud.html">Salud</a><a href="educacion.html">Educación</a><a href="empleo.html">Empleo</a><a href="tecnologia.html">Tecnología</a><a href="transporte.html">Transporte</a><a href="contacto.html">Contacto</a></nav>
+  <header>
+    <h1>GuateInsights</h1>
+    <p>Datos Públicos de Clima en Guatemala</p>
+  </header>
+
+  <nav>
+    <a href="index.html">Inicio</a>
+    <a href="exportaciones.html">Exportaciones</a>
+    <a href="importaciones.html">Importaciones</a>
+    <a href="clima.html">Clima</a>
+    <a href="riesgo.html">Riesgos</a>
+    <a href="salud.html">Salud</a>
+    <a href="contacto.html">Contacto</a>
+  </nav>
+
   <section>
-    <h2>Clima</h2>
-    <p>Próximamente visualizaciones y datos reales de esta categoría.</p>
+    <h2>Precipitaciones por Departamento (Marzo 2024)</h2>
+    <p>Fuente: INSIVUMEH</p>
+    <table>
+      <thead>
+        <tr>
+          <th>Departamento</th>
+          <th>Precipitación Acumulada (mm)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>Alta Verapaz</td><td>345</td></tr>
+        <tr><td>Petén</td><td>278</td></tr>
+        <tr><td>Izabal</td><td>410</td></tr>
+        <tr><td>Huehuetenango</td><td>190</td></tr>
+        <tr><td>Escuintla</td><td>120</td></tr>
+      </tbody>
+    </table>
+
+    <canvas id="chartClima"></canvas>
+    <script>
+      const ctx3 = document.getElementById('chartClima').getContext('2d');
+      new Chart(ctx3, {
+        type: 'bar',
+        data: {
+          labels: ['Alta Verapaz', 'Petén', 'Izabal', 'Huehuetenango', 'Escuintla'],
+          datasets: [{
+            label: 'Precipitación (mm)',
+            data: [345, 278, 410, 190, 120],
+            backgroundColor: '#1d90ff'
+          }]
+        },
+        options: {
+          responsive: true,
+          plugins: {
+            legend: { display: false },
+            title: {
+              display: true,
+              text: 'Precipitación Mensual por Departamento - Marzo 2024'
+            }
+          }
+        }
+      });
+    </script>
   </section>
 </body>
 </html>
