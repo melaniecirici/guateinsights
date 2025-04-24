@@ -1,25 +1,47 @@
 <!DOCTYPE html>
-<html lang="es">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Empleo - GuateInsights</title>
-  <style>
-    body { font-family: Arial, sans-serif; margin: 0; padding: 0; background-color: #f7f9fc; }
-    header { background-color: #024873; color: white; padding: 20px; text-align: center; }
-    nav { background-color: #03619c; padding: 10px; text-align: center; }
-    nav a { color: white; text-decoration: none; margin: 0 10px; font-weight: bold; }
-    nav a:hover { text-decoration: underline; }
-    section { padding: 40px; }
-    h2 { color: #024873; }
-  </style>
-</head>
-<body>
-  <header><h1>GuateInsights</h1><p>Inteligencia de Datos Públicos de Guatemala</p></header>
-  <nav><a href="index.html">Inicio</a><a href="exportaciones.html">Exportaciones</a><a href="importaciones.html">Importaciones</a><a href="clima.html">Clima</a><a href="riesgo.html">Riesgos</a><a href="salud.html">Salud</a><a href="educacion.html">Educación</a><a href="empleo.html">Empleo</a><a href="tecnologia.html">Tecnología</a><a href="transporte.html">Transporte</a><a href="contacto.html">Contacto</a></nav>
-  <section>
-    <h2>Empleo</h2>
-    <p>Próximamente visualizaciones y datos reales de esta categoría.</p>
-  </section>
-</body>
-</html>
+<html lang="es"><head><meta charset="UTF-8"><title>Empleo - GuateInsights</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<style>
+body { font-family: Arial; background: #f7f9fc; margin: 0; }
+header { background: #024873; color: white; padding: 20px; text-align: center; }
+nav { background: #03619c; text-align: center; padding: 10px; }
+nav a { color: white; margin: 0 10px; text-decoration: none; font-weight: bold; }
+section { padding: 40px; } table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+th, td { padding: 10px; border: 1px solid #ccc; } th { background: #024873; color: white; }
+canvas { margin-top: 30px; max-width: 100%; height: auto; }
+</style></head><body>
+<header><h1>GuateInsights - Empleo</h1></header>
+<nav><a href="index.html">Inicio</a><a href="salud.html">Salud</a><a href="educacion.html">Educación</a><a href="empleo.html">Empleo</a><a href="tecnologia.html">Tecnología</a></nav>
+<section><h2>Indicadores de Empleo (2024)</h2>
+<table>
+<tr><th>Indicador</th><th>Valor</th></tr>
+<tr><td>Desempleo (%)</td><td>4.3</td></tr>
+<tr><td>Empleo informal (%)</td><td>70.1</td></tr>
+<tr><td>Tasa de ocupación total (%)</td><td>64.5</td></tr>
+<tr><td>Trabajadores formales</td><td>2,100,000</td></tr>
+<tr><td>Salario promedio (USD)</td><td>$420</td></tr>
+</table>
+<canvas id="chartEmpleo"></canvas>
+<script>
+const ctxEmp = document.getElementById('chartEmpleo').getContext('2d');
+new Chart(ctxEmp, {
+  type: 'bar',
+  data: {
+    labels: ['Desempleo', 'Informalidad', 'Ocupación', 'Formales', 'Salario'],
+    datasets: [{
+      label: 'Indicadores de Empleo',
+      data: [4.3, 70.1, 64.5, 2100000, 420],
+      backgroundColor: ['#f75e5e', '#ffc107', '#0dcaf0', '#20c997', '#6610f2']
+    }]
+  },
+  options: {
+    responsive: true,
+    plugins: {
+      title: {
+        display: true,
+        text: 'Empleo en Guatemala - 2024'
+      }
+    }
+  }
+});
+</script></section></body></html>
