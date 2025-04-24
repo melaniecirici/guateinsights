@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es"><head><meta charset="UTF-8"><title>Transporte - GuateInsights</title>
+<html lang="es"><head><meta charset="UTF-8"><title>Demografía - GuateInsights</title>
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <style>
 body { font-family: Arial; background: #f7f9fc; margin: 0; }
@@ -10,27 +10,27 @@ section { padding: 40px; } table { width: 100%; border-collapse: collapse; margi
 th, td { padding: 10px; border: 1px solid #ccc; } th { background: #024873; color: white; }
 canvas { margin-top: 30px; max-width: 100%; height: auto; }
 </style></head><body>
-<header><h1>GuateInsights - Transporte</h1></header>
+<header><h1>GuateInsights - Demografía</h1></header>
 <nav><a href="index.html">Inicio</a><a href="transporte.html">Transporte</a><a href="comercio.html">Comercio</a><a href="demografia.html">Demografía</a></nav>
-<section><h2>Unidades Vehiculares Registradas (2024)</h2>
-<table><tr><th>Tipo de Vehículo</th><th>Unidades Registradas</th></tr>
-<tr><td>Automóviles</td><td>1,850,000</td></tr>
-<tr><td>Motocicletas</td><td>1,350,000</td></tr>
-<tr><td>Camiones</td><td>450,000</td></tr>
-<tr><td>Buses</td><td>32,000</td></tr>
-<tr><td>Tuk-tuks</td><td>58,000</td></tr>
+<section><h2>Población Estimada por Departamento (2024)</h2>
+<table><tr><th>Departamento</th><th>Población (2024)</th></tr>
+<tr><td>Guatemala</td><td>3,400,000</td></tr>
+<tr><td>Huehuetenango</td><td>1,150,000</td></tr>
+<tr><td>Alta Verapaz</td><td>1,320,000</td></tr>
+<tr><td>Quiché</td><td>1,070,000</td></tr>
+<tr><td>Escuintla</td><td>780,000</td></tr>
 </table>
-<canvas id="chartTransporte"></canvas>
+<canvas id="chartDemografia"></canvas>
 <script>
-const ctxTrans = document.getElementById('chartTransporte').getContext('2d');
-new Chart(ctxTrans, {
+const ctxDem = document.getElementById('chartDemografia').getContext('2d');
+new Chart(ctxDem, {
   type: 'bar',
   data: {
-    labels: ['Automóviles', 'Motocicletas', 'Camiones', 'Buses', 'Tuk-tuks'],
+    labels: ['Guatemala', 'Huehuetenango', 'Alta Verapaz', 'Quiché', 'Escuintla'],
     datasets: [{
-      label: 'Unidades Registradas',
-      data: [1850000, 1350000, 450000, 32000, 58000],
-      backgroundColor: ['#0dcaf0', '#ffc107', '#198754', '#dc3545', '#6610f2']
+      label: 'Población',
+      data: [3400000, 1150000, 1320000, 1070000, 780000],
+      backgroundColor: ['#0dcaf0', '#198754', '#ffc107', '#dc3545', '#6610f2']
     }]
   },
   options: {
@@ -38,7 +38,7 @@ new Chart(ctxTrans, {
     plugins: {
       title: {
         display: true,
-        text: 'Vehículos Registrados en Guatemala - 2024'
+        text: 'Distribución de la Población por Departamento - 2024'
       }
     }
   }
