@@ -1,47 +1,46 @@
 <!DOCTYPE html>
-<html lang="es"><head><meta charset="UTF-8"><title>Tecnología - GuateInsights</title>
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-<style>
-body { font-family: Arial; background: #f7f9fc; margin: 0; }
-header { background: #024873; color: white; padding: 20px; text-align: center; }
-nav { background: #03619c; text-align: center; padding: 10px; }
-nav a { color: white; margin: 0 10px; text-decoration: none; font-weight: bold; }
-section { padding: 40px; } table { width: 100%; border-collapse: collapse; margin-top: 20px; }
-th, td { padding: 10px; border: 1px solid #ccc; } th { background: #024873; color: white; }
-canvas { margin-top: 30px; max-width: 100%; height: auto; }
-</style></head><body>
-<header><h1>GuateInsights - Tecnología</h1></header>
-<nav><a href="index.html">Inicio</a><a href="salud.html">Salud</a><a href="educacion.html">Educación</a><a href="empleo.html">Empleo</a><a href="tecnologia.html">Tecnología</a></nav>
-<section><h2>Indicadores Tecnológicos (2024)</h2>
-<table>
-<tr><th>Indicador</th><th>Valor</th></tr>
-<tr><td>Acceso a internet (%)</td><td>61.2%</td></tr>
-<tr><td>Usuarios móviles activos</td><td>16,500,000</td></tr>
-<tr><td>Cobertura celular nacional (%)</td><td>92%</td></tr>
-<tr><td>Penetración de smartphones (%)</td><td>54%</td></tr>
-<tr><td>Centros comunitarios digitales</td><td>180</td></tr>
-</table>
-<canvas id="chartTecnologia"></canvas>
-<script>
-const ctxTec = document.getElementById('chartTecnologia').getContext('2d');
-new Chart(ctxTec, {
-  type: 'bar',
-  data: {
-    labels: ['Internet', 'Móviles', 'Cobertura', 'Smartphones', 'Centros'],
-    datasets: [{
-      label: 'Indicadores de Tecnología',
-      data: [61.2, 16500000, 92, 54, 180],
-      backgroundColor: ['#6610f2', '#0dcaf0', '#198754', '#ffc107', '#dc3545']
-    }]
-  },
-  options: {
-    responsive: true,
-    plugins: {
-      title: {
-        display: true,
-        text: 'Tecnología en Guatemala - 2024'
-      }
-    }
-  }
-});
-</script></section></body></html>
+<html lang="es"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tecnología y Conectividad</title>
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+<style>body { font-family: 'Open Sans', sans-serif; margin: 0; background-color: #f4f8fb; color: #333; }
+header { background-color: #007acc; color: white; padding: 20px; text-align: center; font-size: 1.5em; }
+.sidebar {
+  height: 100vh; width: 220px; position: fixed; top: 0; left: 0; background-color: #024873; padding-top: 60px;
+  display: flex; flex-direction: column; gap: 15px; font-weight: bold;
+}
+.sidebar a {
+  padding: 14px 20px; text-decoration: none; color: white; display: block;
+}
+.sidebar a:hover { background-color: #03619c; }
+main { margin-left: 240px; padding: 40px; }
+.card {
+  background: white; border-radius: 10px; padding: 20px; margin-bottom: 30px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+h2 { color: #024873; }
+</style>
+</head><body>
+<header>GuateInsights</header>
+<div class="sidebar">
+  <a href="index.html">Inicio</a>
+  <a href="exportaciones.html">Exportaciones</a>
+  <a href="importaciones.html">Importaciones</a>
+  <a href="clima.html">Clima</a>
+  <a href="riesgo.html">Riesgos</a>
+  <a href="salud.html">Salud</a>
+  <a href="educacion.html">Educación</a>
+  <a href="empleo.html">Empleo</a>
+  <a href="tecnologia.html">Tecnología</a>
+  <a href="transporte.html">Transporte</a>
+  <a href="comercio.html">Comercio</a>
+  <a href="demografia.html">Demografía</a>
+  <a href="contacto.html">Contacto</a>
+</div>
+<main>
+  <div class="card">
+    <h2>Tecnología y Conectividad</h2>
+    <p>Próximamente visualizaciones y datos reales en esta categoría.</p>
+  </div>
+</main>
+</body></html>

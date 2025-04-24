@@ -1,140 +1,46 @@
-
 <!DOCTYPE html>
-<html lang="es">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>GuateInsights - Exportaciones</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Inter', sans-serif;
-      background-color: #f7f9fc;
-      display: flex;
-    }
-    aside {
-      width: 220px;
-      background-color: #03619c;
-      color: white;
-      height: 100vh;
-      position: fixed;
-      top: 0; left: 0;
-      padding-top: 30px;
-    }
-    aside h2 {
-      text-align: center;
-      font-weight: 600;
-      margin-bottom: 30px;
-    }
-    aside nav a {
-      display: block;
-      color: white;
-      text-decoration: none;
-      padding: 15px 20px;
-      font-weight: 500;
-    }
-    aside nav a:hover {
-      background-color: #024873;
-    }
-    main {
-      margin-left: 220px;
-      padding: 40px;
-      flex: 1;
-    }
-    .card {
-      background: white;
-      border-radius: 8px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.05);
-      padding: 20px;
-      margin-bottom: 30px;
-    }
-    .card h3 {
-      margin-top: 0;
-      color: #03619c;
-    }
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      margin-top: 15px;
-    }
-    th, td {
-      padding: 10px;
-      border: 1px solid #ddd;
-    }
-    th {
-      background-color: #03619c;
-      color: white;
-    }
-    canvas {
-      max-width: 100%;
-      height: auto;
-      margin-top: 20px;
-    }
-  </style>
-</head>
-<body>
-  <aside>
-    <h2>GuateInsights</h2>
-    <nav>
-      <a href="index.html">Inicio</a>
-      <a href="exportaciones.html">Exportaciones</a>
-      <a href="importaciones.html">Importaciones</a>
-      <a href="clima.html">Clima</a>
-      <a href="riesgo.html">Riesgos</a>
-      <a href="salud.html">Salud</a>
-      <a href="educacion.html">Educación</a>
-      <a href="empleo.html">Empleo</a>
-      <a href="tecnologia.html">Tecnología</a>
-      <a href="transporte.html">Transporte</a>
-      <a href="comercio.html">Comercio</a>
-      <a href="demografia.html">Demografía</a>
-      <a href="contacto.html">Contacto</a>
-    </nav>
-  </aside>
-
-  <main>
-    <div class="card">
-      <h3>Exportaciones por Producto (2024)</h3>
-      <table>
-        <thead>
-          <tr><th>Producto</th><th>Volumen (ton)</th><th>Valor USD</th><th>Destino</th></tr>
-        </thead>
-        <tbody>
-          <tr><td>Café</td><td>162,000</td><td>$748,000,000</td><td>EE.UU.</td></tr>
-          <tr><td>Banano</td><td>194,000</td><td>$578,000,000</td><td>Unión Europea</td></tr>
-          <tr><td>Azúcar</td><td>240,000</td><td>$421,000,000</td><td>Corea del Sur</td></tr>
-          <tr><td>Cardamomo</td><td>68,000</td><td>$312,000,000</td><td>Medio Oriente</td></tr>
-          <tr><td>Vestimenta</td><td>220,000</td><td>$610,000,000</td><td>México</td></tr>
-        </tbody>
-      </table>
-
-      <canvas id="exportChart"></canvas>
-      <script>
-        const ctx = document.getElementById('exportChart').getContext('2d');
-        new Chart(ctx, {
-          type: 'bar',
-          data: {
-            labels: ['Café', 'Banano', 'Azúcar', 'Cardamomo', 'Vestimenta'],
-            datasets: [{
-              label: 'Valor en USD',
-              data: [748, 578, 421, 312, 610],
-              backgroundColor: '#007acc'
-            }]
-          },
-          options: {
-            responsive: true,
-            plugins: {
-              title: {
-                display: true,
-                text: 'Exportaciones por Producto - 2024'
-              }
-            }
-          }
-        });
-      </script>
-    </div>
-  </main>
-</body>
-</html>
+<html lang="es"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Exportaciones por Producto (2024)</title>
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+<style>body { font-family: 'Open Sans', sans-serif; margin: 0; background-color: #f4f8fb; color: #333; }
+header { background-color: #007acc; color: white; padding: 20px; text-align: center; font-size: 1.5em; }
+.sidebar {
+  height: 100vh; width: 220px; position: fixed; top: 0; left: 0; background-color: #024873; padding-top: 60px;
+  display: flex; flex-direction: column; gap: 15px; font-weight: bold;
+}
+.sidebar a {
+  padding: 14px 20px; text-decoration: none; color: white; display: block;
+}
+.sidebar a:hover { background-color: #03619c; }
+main { margin-left: 240px; padding: 40px; }
+.card {
+  background: white; border-radius: 10px; padding: 20px; margin-bottom: 30px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+h2 { color: #024873; }
+</style>
+</head><body>
+<header>GuateInsights</header>
+<div class="sidebar">
+  <a href="index.html">Inicio</a>
+  <a href="exportaciones.html">Exportaciones</a>
+  <a href="importaciones.html">Importaciones</a>
+  <a href="clima.html">Clima</a>
+  <a href="riesgo.html">Riesgos</a>
+  <a href="salud.html">Salud</a>
+  <a href="educacion.html">Educación</a>
+  <a href="empleo.html">Empleo</a>
+  <a href="tecnologia.html">Tecnología</a>
+  <a href="transporte.html">Transporte</a>
+  <a href="comercio.html">Comercio</a>
+  <a href="demografia.html">Demografía</a>
+  <a href="contacto.html">Contacto</a>
+</div>
+<main>
+  <div class="card">
+    <h2>Exportaciones por Producto (2024)</h2>
+    <p>Próximamente visualizaciones y datos reales en esta categoría.</p>
+  </div>
+</main>
+</body></html>

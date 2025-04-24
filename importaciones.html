@@ -1,44 +1,46 @@
 <!DOCTYPE html>
-<html lang="es"><head><meta charset="UTF-8"><title>Importaciones - GuateInsights</title>
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-<style>
-body { font-family: Arial; background: #f7f9fc; margin: 0; }
-header { background: #024873; color: white; padding: 20px; text-align: center; }
-nav { background: #03619c; text-align: center; padding: 10px; overflow-x: auto; white-space: nowrap; }
-nav a { color: white; margin: 0 10px; text-decoration: none; font-weight: bold; display: inline-block; }
-section { padding: 40px; } table { width: 100%; border-collapse: collapse; margin-top: 20px; }
-th, td { padding: 10px; border: 1px solid #ccc; } th { background: #024873; color: white; }
-canvas { margin-top: 30px; max-width: 100%; height: auto; }
-</style></head><body>
-<header><h1>GuateInsights - Importaciones</h1></header>
-<nav>
-  <a href="index.html">Inicio</a><a href="riesgo.html">Riesgos</a><a href="clima.html">Clima</a><a href="importaciones.html">Importaciones</a>
-</nav>
-<section><h2>Importaciones Principales por Categoría (2024)</h2>
-<table><tr><th>Producto</th><th>Valor en USD (millones)</th></tr>
-<tr><td>Vehículos</td><td>1,120</td></tr><tr><td>Petróleo</td><td>980</td></tr><tr><td>Medicinas</td><td>540</td></tr>
-<tr><td>Maquinaria</td><td>870</td></tr><tr><td>Cereales</td><td>450</td></tr></table>
-<canvas id="chartImportaciones"></canvas>
-<script>
-const ctxI = document.getElementById('chartImportaciones').getContext('2d');
-new Chart(ctxI, {
-  type: 'bar',
-  data: {
-    labels: ['Vehículos', 'Petróleo', 'Medicinas', 'Maquinaria', 'Cereales'],
-    datasets: [{
-      label: 'Valor en USD (millones)',
-      data: [1120, 980, 540, 870, 450],
-      backgroundColor: ['#0dcaf0', '#ffc107', '#198754', '#dc3545', '#6610f2']
-    }]
-  },
-  options: {
-    responsive: true,
-    plugins: {
-      title: {
-        display: true,
-        text: 'Importaciones por Producto - 2024'
-      }
-    }
-  }
-});
-</script></section></body></html>
+<html lang="es"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Importaciones por Producto (2024)</title>
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+<style>body { font-family: 'Open Sans', sans-serif; margin: 0; background-color: #f4f8fb; color: #333; }
+header { background-color: #007acc; color: white; padding: 20px; text-align: center; font-size: 1.5em; }
+.sidebar {
+  height: 100vh; width: 220px; position: fixed; top: 0; left: 0; background-color: #024873; padding-top: 60px;
+  display: flex; flex-direction: column; gap: 15px; font-weight: bold;
+}
+.sidebar a {
+  padding: 14px 20px; text-decoration: none; color: white; display: block;
+}
+.sidebar a:hover { background-color: #03619c; }
+main { margin-left: 240px; padding: 40px; }
+.card {
+  background: white; border-radius: 10px; padding: 20px; margin-bottom: 30px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+h2 { color: #024873; }
+</style>
+</head><body>
+<header>GuateInsights</header>
+<div class="sidebar">
+  <a href="index.html">Inicio</a>
+  <a href="exportaciones.html">Exportaciones</a>
+  <a href="importaciones.html">Importaciones</a>
+  <a href="clima.html">Clima</a>
+  <a href="riesgo.html">Riesgos</a>
+  <a href="salud.html">Salud</a>
+  <a href="educacion.html">Educación</a>
+  <a href="empleo.html">Empleo</a>
+  <a href="tecnologia.html">Tecnología</a>
+  <a href="transporte.html">Transporte</a>
+  <a href="comercio.html">Comercio</a>
+  <a href="demografia.html">Demografía</a>
+  <a href="contacto.html">Contacto</a>
+</div>
+<main>
+  <div class="card">
+    <h2>Importaciones por Producto (2024)</h2>
+    <p>Próximamente visualizaciones y datos reales en esta categoría.</p>
+  </div>
+</main>
+</body></html>
