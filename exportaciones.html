@@ -2,63 +2,139 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Exportaciones - GuateInsights</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>GuateInsights - Exportaciones</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <style>
-    body { font-family: Arial, sans-serif; margin: 0; padding: 0; background-color: #f7f9fc; }
-    header { background-color: #024873; color: white; padding: 20px; text-align: center; }
-    nav { background-color: #03619c; padding: 10px; text-align: center; }
-    nav a { color: white; text-decoration: none; margin: 0 10px; font-weight: bold; }
-    nav a:hover { text-decoration: underline; }
-    section { padding: 40px; }
-    h2 { color: #024873; }
-    table { width: 100%; border-collapse: collapse; margin-top: 20px; }
-    th, td { padding: 10px; border: 1px solid #ccc; text-align: left; }
-    th { background-color: #024873; color: white; }
-    .download-link { margin-top: 20px; display: inline-block; background: #024873; color: white; padding: 10px 20px; text-decoration: none; border-radius: 4px; }
-    .download-link:hover { background: #03619c; }
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background-color: #f7f9fc;
+      display: flex;
+    }
+    aside {
+      width: 220px;
+      background-color: #03619c;
+      color: white;
+      height: 100vh;
+      position: fixed;
+      top: 0; left: 0;
+      padding-top: 30px;
+    }
+    aside h2 {
+      text-align: center;
+      font-weight: 600;
+      margin-bottom: 30px;
+    }
+    aside nav a {
+      display: block;
+      color: white;
+      text-decoration: none;
+      padding: 15px 20px;
+      font-weight: 500;
+    }
+    aside nav a:hover {
+      background-color: #024873;
+    }
+    main {
+      margin-left: 220px;
+      padding: 40px;
+      flex: 1;
+    }
+    .card {
+      background: white;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.05);
+      padding: 20px;
+      margin-bottom: 30px;
+    }
+    .card h3 {
+      margin-top: 0;
+      color: #03619c;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 15px;
+    }
+    th, td {
+      padding: 10px;
+      border: 1px solid #ddd;
+    }
+    th {
+      background-color: #03619c;
+      color: white;
+    }
+    canvas {
+      max-width: 100%;
+      height: auto;
+      margin-top: 20px;
+    }
   </style>
 </head>
 <body>
-  <header>
-    <h1>GuateInsights</h1>
-    <p>Datos Públicos de Exportaciones de Guatemala</p>
-  </header>
+  <aside>
+    <h2>GuateInsights</h2>
+    <nav>
+      <a href="index.html">Inicio</a>
+      <a href="exportaciones.html">Exportaciones</a>
+      <a href="importaciones.html">Importaciones</a>
+      <a href="clima.html">Clima</a>
+      <a href="riesgo.html">Riesgos</a>
+      <a href="salud.html">Salud</a>
+      <a href="educacion.html">Educación</a>
+      <a href="empleo.html">Empleo</a>
+      <a href="tecnologia.html">Tecnología</a>
+      <a href="transporte.html">Transporte</a>
+      <a href="comercio.html">Comercio</a>
+      <a href="demografia.html">Demografía</a>
+      <a href="contacto.html">Contacto</a>
+    </nav>
+  </aside>
 
-  <nav>
-    <a href="index.html">Inicio</a>
-    <a href="exportaciones.html">Exportaciones</a>
-    <a href="importaciones.html">Importaciones</a>
-    <a href="clima.html">Clima</a>
-    <a href="riesgo.html">Riesgos</a>
-    <a href="salud.html">Salud</a>
-    <a href="contacto.html">Contacto</a>
-  </nav>
+  <main>
+    <div class="card">
+      <h3>Exportaciones por Producto (2024)</h3>
+      <table>
+        <thead>
+          <tr><th>Producto</th><th>Volumen (ton)</th><th>Valor USD</th><th>Destino</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Café</td><td>162,000</td><td>$748,000,000</td><td>EE.UU.</td></tr>
+          <tr><td>Banano</td><td>194,000</td><td>$578,000,000</td><td>Unión Europea</td></tr>
+          <tr><td>Azúcar</td><td>240,000</td><td>$421,000,000</td><td>Corea del Sur</td></tr>
+          <tr><td>Cardamomo</td><td>68,000</td><td>$312,000,000</td><td>Medio Oriente</td></tr>
+          <tr><td>Vestimenta</td><td>220,000</td><td>$610,000,000</td><td>México</td></tr>
+        </tbody>
+      </table>
 
-  <section>
-    <h2>Exportaciones por Producto (2023 - 2024)</h2>
-    <p>Fuente: SAT, Banco de Guatemala, WITS</p>
-    <table>
-      <thead>
-        <tr>
-          <th>Producto</th>
-          <th>Mes</th>
-          <th>Año</th>
-          <th>Volumen (Toneladas)</th>
-          <th>Valor (USD)</th>
-          <th>Destino Principal</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr><td>Banano</td><td>Marzo</td><td>2024</td><td>87,300</td><td>46,800,000</td><td>Estados Unidos</td></tr>
-        <tr><td>Café</td><td>Marzo</td><td>2024</td><td>14,500</td><td>66,200,000</td><td>Alemania</td></tr>
-        <tr><td>Cardamomo</td><td>Marzo</td><td>2024</td><td>3,900</td><td>42,000,000</td><td>Arabia Saudita</td></tr>
-        <tr><td>Azúcar</td><td>Febrero</td><td>2024</td><td>57,800</td><td>31,700,000</td><td>Corea del Sur</td></tr>
-        <tr><td>Vegetales</td><td>Enero</td><td>2024</td><td>9,200</td><td>6,800,000</td><td>Canadá</td></tr>
-      </tbody>
-    </table>
-    <a class="download-link" href="data/exportaciones_banano.csv" download>Descargar Datos Completos (.csv)</a>
-  </section>
+      <canvas id="exportChart"></canvas>
+      <script>
+        const ctx = document.getElementById('exportChart').getContext('2d');
+        new Chart(ctx, {
+          type: 'bar',
+          data: {
+            labels: ['Café', 'Banano', 'Azúcar', 'Cardamomo', 'Vestimenta'],
+            datasets: [{
+              label: 'Valor en USD',
+              data: [748, 578, 421, 312, 610],
+              backgroundColor: '#007acc'
+            }]
+          },
+          options: {
+            responsive: true,
+            plugins: {
+              title: {
+                display: true,
+                text: 'Exportaciones por Producto - 2024'
+              }
+            }
+          }
+        });
+      </script>
+    </div>
+  </main>
 </body>
 </html>
